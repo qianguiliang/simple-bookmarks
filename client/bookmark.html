@@ -1,0 +1,17 @@
+<template name="bookmark">
+	<li>
+		
+		{{#if isEditing}}
+		<form class="form-edit">
+			<div class="form-group"><input type="text" id="bookmark_name" class="form-control" value="{{name}}"></div>
+			<div class="form-group"><input type="text" id="bookmark_url" class="form-control" value="{{url}}"></div>
+			<button type="submit" class="btn btn-primary">确定</button>
+			<button class="btn btn-primary btn-cancel">取消</button>
+		</form>
+		{{else}}
+			<a href="{{url}}" target="_blank">{{name}}</a>
+			<span class="remove glyphicon glyphicon-trash" aria-hidden="true"></span>
+			<span class="edit glyphicon glyphicon-pencil" aria-hidden="true"></span>
+		{{/if}}
+	</li>
+</template>
