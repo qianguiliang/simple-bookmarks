@@ -1,4 +1,4 @@
-<template name="bookmark">
+<!-- <template name="bookmark">
 	<li>
 		
 		{{#if isEditing}}
@@ -13,5 +13,14 @@
 			<span class="remove glyphicon glyphicon-trash" aria-hidden="true"></span>
 			<span class="edit glyphicon glyphicon-pencil" aria-hidden="true"></span>
 		{{/if}}
+	</li>
+</template> -->
+<template name="bookmark">
+	<li>
+		<a href="{{url}}"  target="_blank">{{name}}</a>
+		<span class="remove glyphicon glyphicon-trash" aria-hidden="true"></span>
+		<a href="/edit/{{_id}}">
+			<span class="edit glyphicon glyphicon-pencil" aria-hidden="true"></span>
+		</a>
 	</li>
 </template>

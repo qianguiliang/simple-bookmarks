@@ -1,0 +1,32 @@
+<template name="layout">
+	<div class="container">
+		<header>
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand">在线书签</a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="/">HOME<span class="sr-only">(current)</span></a></li>
+							<li><a href="/add">添加书签</a></li>
+							<li><a href="#">{{>loginButtons }}</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		{{#if currentUser}}
+			{{> yield}}
+		{{else}}
+			<div class="alert alert-warning" role="alert">欢迎使用在线书签，请登录/注册！</div>
+		{{/if}}
+	</div>
+</template>
